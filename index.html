@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>CS109 - Spotify</title>
+
+		<!-- Load CSS libraries -->
+        <link href="css/clusterize.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
+		<link rel="icon" href="img/logo.png">
+
+	</head>
+	<body style="visibility: hidden">
+
+	<!-- ********************** ADD YOUR HTML-ELEMENTS HERE *********************** -->	
+	<!-- Make sure to include a div-container with the id: 'chart-area' -->
+		<div class="header">
+			<h5><strong>CS109 Final Project</strong></h5>
+		</div>
+		<div id="title">
+			<br>
+			<h2><strong>Spotify Playlists - Song Recommendations</strong></h2>
+		</div>
+		<div id="explanation" style="text-align: center; margin-left: 180px; margin-right: 180px">
+			<p>
+				For our project, we opted to build a model that recommends Spotify songs based on a preprocessed dataset
+				of one million playlists. The difficult aspect arises in understanding - how do you score a
+				recommendation?
+			</p>
+			<h3 style="margin-top: 100px; margin-bottom: 30px"><strong>Our Method:</strong></h3>
+		</div>
+		<div id="method" style="text-align: left; width: 50%; margin-left: 30%;">
+			<h4>1. Sample a random playlist of length greater than 10</h4>
+			<h4>2. Randomly obscure a quarter of the playlist</h4>
+			<h4>3. Using our models, recommend songs</h4>
+			<h4>4. Compare to obscured songs - accuracy is ratio of correct predictions</h4>
+
+		</div>
+		<div id="try" style="text-align: center; margin-left: 180px; margin-right: 180px">
+            <h3>Below, we've included data actually generated from our model using the Spotify Millions Dataset</h3>
+			<h3>Try it out:</h3>
+			<button id="playlistButton" onclick="getPlaylists()">Generate Random Playlists!</button>
+		</div>
+		<br>
+		<br>
+		<div id="chart-area">
+			<div class="row">
+				<div class="col-md-4" style="text-align:center">
+					<h4 style="text-align:left"><strong>Pick a Playlist By Name:</strong></h4>
+					<svg width="100%" height="500">
+						<g>
+							<rect x="20" y="20" rx="5" ry="5" height="80" width="92%" fill="#2CE28C" onclick="getPlaylist(0)" ></rect>
+							<text id="0" x="40" y="40" dy=".55em" font-size="25px" onclick="getPlaylist(0)">Playlist 1</text>
+						</g>
+						<g>
+							<rect x="20" y="110" rx="5" ry="5" height="80" width="92%" fill="#2CE28C" onclick="getPlaylist(1)"></rect>
+							<text id="1" x="40" y="130" dy=".55em" font-size="25px" onclick="getPlaylist(1)">Playlist 1</text>
+						</g>
+						<g>
+							<rect x="20" y="200" rx="5" ry="5" height="80" width="92%" fill="#2CE28C" onclick="getPlaylist(2)"></rect>
+							<text id="2" x="40" y="220" dy=".55em" font-size="25px" onclick="getPlaylist(2)">Playlist 1</text>
+						</g>
+						<g>
+							<rect x="20" y="290" rx="5" ry="5" height="80" width="92%" fill="#2CE28C" onclick="getPlaylist(3)"></rect>
+							<text id="3" x="40" y="310" dy=".55em" font-size="25px" onclick="getPlaylist(3)">Playlist 1</text>
+						</g>
+						<g>
+							<rect x="20" y="380" rx="5" ry="5" height="80" width="92%" fill="#2CE28C" onclick="getPlaylist(4)"></rect>
+							<text id="4" x="40" y="400" dy=".55em" font-size="25px" onclick="getPlaylist(4)">Playlist 1</text>
+						</g>
+					</svg>
+				</div>
+                <div class="col-md-4">
+                    <!--HTML-->
+                    <div class="clusterize">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Songs in Playlist (scroll)</th>
+                            </tr>
+                            </thead>
+                        </table>
+
+                        <div id="scrollArea" class="clusterize-scroll">
+                            <table>
+                                <tbody id="contentArea" class="clusterize-content">
+                                <tr class="clusterize-no-data">
+                                    <td>Choose Playlist to Load Data…</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-md-4">
+					<!--HTML-->
+					<div class="clusterize">
+						<table>
+							<thead>
+							<tr>
+								<th>Predictions</th>
+							</tr>
+							</thead>
+						</table>
+						<div id="scrollArea2" class="clusterize-scroll">
+							<table>
+								<tbody id="contentArea2" class="clusterize-content">
+								<tr class="clusterize-no-data">
+									<td>Choose Playlist to Load Data…</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+                    <div id="refreshSection" onclick="refreshPlaylist()">
+                        <img src="img/refresh.svg" id="refresh" >
+                        <p id="getNew">Get New Predictions</p>
+                    </div>
+				</div>
+			</div>
+		</div>
+		<div id="space"></div>
+
+	<!-- Load JS libraries: jQuery, bootstrap, D3, D3 Tooltips -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/d3.min.js"></script>
+    <script src="js/clusterize.min.js"></script>
+
+	<script src="js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+
+
+/* ************ ADD YOUR CUSTOM STYLES ************ */
+
+#title {
+  text-align: center;
+  margin: 30px;
+}
+.header {
+  padding: 13px 50px;
+  background-color: #1db954;
+  height: 50px;
+  box-shadow: 0px 2px 50px grey;
+  margin-bottom: 40px;
+}
+
+#chart-area {
+  margin-left: 10px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  background-color: #fafafa;
+}
+
+p{
+  font-size: 25px;
+}
+rect:hover{
+  fill: #1db954;
+}
+
+#try {
+  margin-top: 40px;
+}
+
+#playlistButton {
+  margin-top: 30px;
+  height: 60px;
+  width: 150px;
+  border-radius: 5px;
+  box-shadow: 1px 5px 8px 0px #888888;
+
+}
+
+#refresh {
+  width: 15px;
+}
+
+#refreshSection {
+  margin-top: 2px;
+  visibility: hidden;
+}
+
+#getNew {
+  display: inline;
+  font-size: 18px;
+  vertical-align: middle;
+}
+#space {
+  height: 800px;
+}
+
+
+tr {
+  font-size: 25px;
+}
+
+
+h4 {
+  margin-left: 22px;
+  margin-top: 10px;
+}
+
+
+#contentArea {
+  max-height: 400px;
+}
+
+#scrollArea {
+  max-height: 400px;
+}
+
+
+
